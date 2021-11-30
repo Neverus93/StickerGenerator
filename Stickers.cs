@@ -7,18 +7,8 @@ namespace StickerGenerator_DocX
     public class Stickers
     {
         #region Private Members
-        private static readonly string DocumentSampleResourcesDirectory = "Templates";
-        private static readonly string DocumentSampleOutputDirectory = "Documents";
-        #endregion
-
-        #region Constructors
-        public Stickers()
-        {
-            if (!Directory.Exists(DocumentSampleOutputDirectory))
-            {
-                Directory.CreateDirectory(DocumentSampleOutputDirectory);
-            }
-        }
+        private const string DocumentSampleResourcesDirectory = "Templates";
+        private const string DocumentSampleOutputDirectory = "Documents";
         #endregion
 
         #region Public Methods
@@ -31,31 +21,33 @@ namespace StickerGenerator_DocX
         /// <param name="articleCRM">Артикул чипа из системы CRM</param>
         /// <param name="chip">Название чипа, этикетку на который делает пользователь</param>
         /// <param name="countBoxes">Количество коробок с чипами</param>
-        public static void CreateSticker(string fileName, string number, string article, string articleCRM, string chip, int countBoxes)
+        public static void CreateSticker(string fileName, int number, string article, string articleCRM, string chip, int countBoxes)
         {
             // Файл, в который будет производиться добавление модифицированного шаблона
             using (DocX document = DocX.Create(DocumentSampleOutputDirectory + $"\\{fileName}"))
             {
                 using (DocX appendDocument = DocX.Load(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx"))
                 {
-                    if (int.TryParse(number, out int count))
+
+                    document.ApplyTemplate(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx");
+                    for (int i = 0; i < countBoxes; i++)
                     {
-                        document.ApplyTemplate(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx");
-                        for (int i = 0; i < countBoxes; i++)
-                        {
-                            document.ReplaceText("[firstNumber]", Convert.ToString(count) + "\n");
-                            document.ReplaceText("[article]", article);
-                            document.ReplaceText("[articleCRM]", articleCRM);
-                            document.ReplaceText("[chip]", chip);
-                            document.ReplaceText("[data]", DateTime.Now.ToString("dd/MM/yyyy"));
+                        document.ReplaceText("[firstNumber]", Convert.ToString(number) + "\n");
+                        document.ReplaceText("[article]", article);
+                        document.ReplaceText("[articleCRM]", articleCRM);
+                        document.ReplaceText("[chip]", chip);
+                        document.ReplaceText("[data]", DateTime.Now.ToString("dd/MM/yyyy"));
 
-                            if (i < countBoxes - 1)
-                                document.InsertDocument(appendDocument);
+                        if (i < countBoxes - 1)
+                            document.InsertDocument(appendDocument);
 
-                            count++;
-                        }
-                        document.Save();
+                        number++;
                     }
+                    if (!Directory.Exists(DocumentSampleOutputDirectory))
+                    {
+                        Directory.CreateDirectory(DocumentSampleOutputDirectory);
+                    }
+                    document.Save();
                 }
             }
         }

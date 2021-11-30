@@ -7,30 +7,18 @@
         Title="Sticker Maker" Height="450" Width="800" 
         MaxHeight="450" MinHeight="450"
         MaxWidth="800" MinWidth="800">
-    <Grid ShowGridLines="False">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+    <UniformGrid Columns="2" Rows="6">
         <TextBlock Grid.Column="0" Grid.Row="0" Margin="20">Артикул</TextBlock>
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="20" Name="articleCurrent"/>
         <TextBlock Grid.Column="0" Grid.Row="1" Margin="20">Артикул CRM</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="2" Margin="20">Название</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="3" Margin="20">Номер первой коробки</TextBlock>
-        <TextBlock Grid.Column="0" Grid.Row="4" Margin="20">Количество коробок</TextBlock>
-        <TextBox Grid.Column="1" Grid.Row="0" Margin="20" Name="articleISBC"/>
         <TextBox Grid.Column="1" Grid.Row="1" Margin="20" Name="articleCardFromCRM"/>
+        <TextBlock Grid.Column="0" Grid.Row="2" Margin="20">Название</TextBlock>
         <TextBox Grid.Column="1" Grid.Row="2" Margin="20" Name="chipName"/>
+        <TextBlock Grid.Column="0" Grid.Row="3" Margin="20">Номер первой коробки</TextBlock>
         <TextBox Grid.Column="1" Grid.Row="3" Margin="20,20,311,20" Name="firstBoxNumber"/>
+        <TextBlock Grid.Column="0" Grid.Row="4" Margin="20">Количество коробок</TextBlock>
         <TextBox Grid.Column="1" Grid.Row="4" Margin="20,20,311,20" Name="countOfBoxes"/>
-        <Button Grid.Column="1" Grid.Row="5" Margin="20" Content="Сгенерировать этикетки" Click="Generate_ButtonClick"/>
         <Label Grid.Column="0" Grid.Row="5" Margin="10,10,20,10" x:Name="versionNumber"/>
-    </Grid>
+        <Button Grid.Column="1" Grid.Row="5" Margin="20" Content="Сгенерировать этикетки" Click="Generate_ButtonClick"/>
+    </UniformGrid>
 </Window>

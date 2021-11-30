@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Windows;
 
 namespace StickerGenerator_DocX
@@ -10,6 +11,7 @@ namespace StickerGenerator_DocX
     {
         private string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
         private string company = Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCompanyAttribute>().Company;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -18,30 +20,31 @@ namespace StickerGenerator_DocX
 
         private void Generate_ButtonClick(object sender, RoutedEventArgs e)
         {
-            string resultMessage;
-
             string firstNumber = firstBoxNumber.Text;
-            string article = articleISBC.Text;
+            string article = articleCurrent.Text;
             string articleCRM = articleCardFromCRM.Text;
             string chip = chipName.Text;
             string fileName = chipName.Text;
             int countBoxes;
 
-            if (int.TryParse(countOfBoxes.Text, out countBoxes))
+            try
             {
-                Stickers.CreateSticker(fileName, firstNumber, article, articleCRM, chip, countBoxes);
+                if (int.TryParse(countOfBoxes.Text, out countBoxes) &&
+                    int.TryParse(firstNumber, out int number) &&
+                    countBoxes > 0 && number > 0)
+                {
+                    Stickers.CreateSticker(fileName, number, article, articleCRM, chip, countBoxes);
+                    MessageBox.Show($"Готово\nДокумент \"{fileName}\" успешно сохранён!");
+                }
+                else
+                {
+                    throw new InvalidOperationException("Что-то пошло не так. Проверьте введённые данные...");
+                }
             }
-
-            if (countBoxes != 0 && firstNumber != string.Empty && int.TryParse(firstNumber, out int number) && number != 0)
+            catch (Exception ex)
             {
-                resultMessage = $"Готово\nДокумент \"{fileName}\" успешно сохранён!";
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
             }
-            else
-            {
-                resultMessage = "Что-то пошло не так. Проверьте введённые данные...";
-            }
-
-            MessageBox.Show(resultMessage);
         }
     }
 }
