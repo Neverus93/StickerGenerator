@@ -4,11 +4,14 @@ using Xceed.Words.NET;
 
 namespace StickerGenerator_DocX.Model
 {
-    public class Stickers
+    public static class Stickers
     {
         #region Private Members
         private const string DocumentSampleResourcesDirectory = "Templates";
         private const string DocumentSampleOutputDirectory = "Documents";
+
+        private const string StickerTemplate = "StickerTemplate.docx";
+        
         #endregion
 
         #region Public Methods
@@ -23,19 +26,21 @@ namespace StickerGenerator_DocX.Model
         /// <param name="countBoxes">Количество коробок с чипами</param>
         public static void CreateSticker(string fileName, int number, string article, string articleCRM, string chip, int countBoxes)
         {
-            // Файл, в который будет производиться добавление модифицированного шаблона
-            using (DocX document = DocX.Create(DocumentSampleOutputDirectory + $"\\{fileName}"))
+            string stickerPath = Path.Combine(DocumentSampleResourcesDirectory, StickerTemplate);
+            string outputFileNamePath = Path.Combine(DocumentSampleOutputDirectory, fileName);
+
+            using (DocX document = DocX.Load(stickerPath))
             {
-                using (DocX appendDocument = DocX.Load(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx"))
+                using (DocX appendDocument = DocX.Load(stickerPath))
                 {
-                    document.ApplyTemplate(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx");
+                    document.ApplyTemplate(DocumentSampleResourcesDirectory + "\\StickerTemplate.docx");
                     for (int i = 0; i < countBoxes; i++)
                     {
-                        document.ReplaceText("[firstNumber]", Convert.ToString(number) + "\n");
-                        document.ReplaceText("[article]", article);
-                        document.ReplaceText("[articleCRM]", articleCRM);
-                        document.ReplaceText("[chip]", chip);
-                        document.ReplaceText("[data]", DateTime.Now.ToString("dd/MM/yyyy"));
+                        document.ReplaceText("{firstNumber}", Convert.ToString(number) + "\n");
+                        document.ReplaceText("{article}", article);
+                        document.ReplaceText("{articleCRM}", articleCRM);
+                        document.ReplaceText("{chip}", chip);
+                        document.ReplaceText("{data}", DateTime.Now.ToString("dd/MM/yyyy"));
 
                         if (i < countBoxes - 1)
                         {
@@ -47,7 +52,7 @@ namespace StickerGenerator_DocX.Model
                     {
                         Directory.CreateDirectory(DocumentSampleOutputDirectory);
                     }
-                    document.Save();
+                    document.SaveAs(outputFileNamePath);
                 }
             }
         }

@@ -12,7 +12,6 @@ namespace StickerGenerator_DocX.ViewModel
         private string _article;
         private string _articleCrm;
         private string _chipName;
-        private string _fileName;
         private int _firstNumber;
         private int _countOfBoxes;
 
@@ -71,11 +70,11 @@ namespace StickerGenerator_DocX.ViewModel
         {
             get
             {
-                return _fileName;
+                return _chipName;
             }
             set
             {
-                _fileName = ChipName;
+                _chipName = value;
                 OnPropertyChanged("RelayCommand");
             }
         }

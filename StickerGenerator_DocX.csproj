@@ -79,6 +79,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Model\BoxInfo.cs" />
     <Compile Include="Model\Stickers.cs" />
     <Compile Include="ViewModel\StickerViewModel.cs" />
     <Page Include="MainWindow.xaml">
