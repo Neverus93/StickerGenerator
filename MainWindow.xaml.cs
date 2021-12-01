@@ -1,7 +1,6 @@
-﻿using System;
+﻿using StickerGenerator_DocX.ViewModel;
 using System.Reflection;
 using System.Windows;
-using StickerGenerator_DocX.Model;
 
 namespace StickerGenerator_DocX
 {
@@ -17,6 +16,7 @@ namespace StickerGenerator_DocX
         {
             InitializeComponent();
             versionNumber.Content = $"Version: {version} \nProducted by {company}";
+            DataContext = new StickerViewModel();
         }
     }
 }

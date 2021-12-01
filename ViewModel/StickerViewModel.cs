@@ -7,15 +7,90 @@ using StickerGenerator_DocX.Model;
 
 namespace StickerGenerator_DocX.ViewModel
 {
-    //TODO
     public class StickerViewModel : INotifyPropertyChanged
     {
-        private ICommand _clickCommand;
-        private RelayCommand _relayCommand;
+        private string _article;
+        private string _articleCrm;
+        private string _chipName;
+        private string _fileName;
+        private int _firstNumber;
+        private int _countOfBoxes;
 
         public RelayCommand RelayCommand { get; set; }
         public ICommand ClickCommand { get; set; }
 
+        public int FirstNumber
+        {
+            get
+            {
+                return _firstNumber;
+            }
+            set
+            {
+                _firstNumber = value;
+                OnPropertyChanged("RelayCommand");
+            }
+        }
+        public string Article
+        {
+            get
+            {
+                return _article;
+            }
+            set
+            {
+                _article = value;
+                OnPropertyChanged("RelayCommand");
+            }
+        }
+        public string ArticleCrm
+        {
+            get
+            {
+                return _articleCrm;
+            }
+            set
+            {
+                _articleCrm = value;
+                OnPropertyChanged("RelayCommand");
+            }
+        }
+        public string ChipName
+        {
+            get
+            {
+                return _chipName;
+            }
+            set
+            {
+                _chipName = value;
+                OnPropertyChanged("RelayCommand");
+            }
+        }
+        public string FileName
+        {
+            get
+            {
+                return _fileName;
+            }
+            set
+            {
+                _fileName = ChipName;
+                OnPropertyChanged("RelayCommand");
+            }
+        }
+        public int CountOfBoxes
+        {
+            get
+            {
+                return _countOfBoxes;
+            }
+            set
+            {
+                _countOfBoxes = value;
+                OnPropertyChanged("RelayCommand");
+            }
+        }
         public StickerViewModel()
         {
             RelayCommand = new RelayCommand(Click);
@@ -23,31 +98,22 @@ namespace StickerGenerator_DocX.ViewModel
 
         private void Click(object parameter)
         {
-            //string firstNumber = firstBoxNumber.Text;
-            //string article = articleCurrent.Text;
-            //string articleCRM = articleCardFromCRM.Text;
-            //string chip = chipName.Text;
-            //string fileName = chipName.Text;
-            //int countBoxes;
-
-            //try
-            //{
-            //    if (int.TryParse(countOfBoxes.Text, out countBoxes) &&
-            //        int.TryParse(firstNumber, out int number) &&
-            //        countBoxes > 0 && number > 0)
-            //    {
-            //        Stickers.CreateSticker(fileName, number, article, articleCRM, chip, countBoxes);
-            //        MessageBox.Show($"Готово\nДокумент \"{fileName}\" успешно сохранён!");
-            //    }
-            //    else
-            //    {
-            //        throw new InvalidOperationException("Что-то пошло не так. Проверьте введённые данные...");
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
-            //}
+            try
+            {
+                if(CountOfBoxes > 0 && FirstNumber > 0)
+                {
+                    Stickers.CreateSticker(FileName, FirstNumber, Article, ArticleCrm, ChipName, CountOfBoxes);
+                    MessageBox.Show($"Готово\nДокумент \"{FileName}\" успешно сохранён!");
+                }
+                else
+                {
+                    throw new InvalidOperationException("Что-то пошло не так. Проверьте введённые данные...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error, MessageBoxResult.OK);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
