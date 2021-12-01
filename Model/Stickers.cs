@@ -11,7 +11,6 @@ namespace StickerGenerator_DocX.Model
         private const string DocumentSampleOutputDirectory = "Documents";
 
         private const string StickerTemplate = "StickerTemplate.docx";
-        
         #endregion
 
         #region Public Methods
@@ -31,20 +30,19 @@ namespace StickerGenerator_DocX.Model
 
             using (DocX document = DocX.Load(stickerPath))
             {
-                using (DocX appendDocument = DocX.Load(stickerPath))
+                using (DocX outputDocument = DocX.Load(stickerPath))
                 {
-                    document.ApplyTemplate(DocumentSampleResourcesDirectory + "\\StickerTemplate.docx");
                     for (int i = 0; i < countBoxes; i++)
                     {
-                        document.ReplaceText("{firstNumber}", Convert.ToString(number) + "\n");
-                        document.ReplaceText("{article}", article);
-                        document.ReplaceText("{articleCRM}", articleCRM);
-                        document.ReplaceText("{chip}", chip);
-                        document.ReplaceText("{data}", DateTime.Now.ToString("dd/MM/yyyy"));
+                        outputDocument.ReplaceText("{firstNumber}", Convert.ToString(number) + "\n");
+                        outputDocument.ReplaceText("{article}", article);
+                        outputDocument.ReplaceText("{articleCRM}", articleCRM);
+                        outputDocument.ReplaceText("{chip}", chip);
+                        outputDocument.ReplaceText("{data}", DateTime.Now.ToString("dd/MM/yyyy"));
 
                         if (i < countBoxes - 1)
                         {
-                            document.InsertDocument(appendDocument);
+                            outputDocument.InsertDocument(document);
                         }
                         number++;
                     }

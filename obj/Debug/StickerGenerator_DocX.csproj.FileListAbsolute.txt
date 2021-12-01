@@ -1,37 +1,4 @@
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\Templates\StickerTemplate.dotx
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\StickerGenerator_DocX.exe.config
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\StickerGenerator_DocX.exe
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\StickerGenerator_DocX.pdb
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\DocumentFormat.OpenXml.dll
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\Newtonsoft.Json.dll
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\System.IO.Packaging.dll
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\TemplateEngine.Docx.dll
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\Xceed.Document.NET.dll
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\Xceed.Words.NET.dll
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\DocumentFormat.OpenXml.xml
-C:\Users\svsil\Desktop\StickerGenerator\bin\Debug\Newtonsoft.Json.xml
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\MainWindow.baml
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\MainWindow.g.cs
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\App.g.cs
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX_MarkupCompile.cache
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.g.resources
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.Properties.Resources.resources
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.csproj.GenerateResource.cache
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.csproj.CoreCompileInputs.cache
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.csproj.CopyComplete
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.exe
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.pdb
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX.csproj.AssemblyReference.cache
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\svsil\Desktop\StickerGenerator\obj\Debug\StickerGenerator_DocX_MarkupCompile.lref
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\MainWindow.g.cs
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\App.g.cs
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX_MarkupCompile.cache
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX_MarkupCompile.lref
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.exe
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.pdb
-C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\Templates\StickerTemplate.dotx
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\Templates\StickerTemplate.docx
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\StickerGenerator_DocX.exe.config
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\StickerGenerator_DocX.exe
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\StickerGenerator_DocX.pdb
@@ -43,9 +10,16 @@ C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\Xceed.Words.NET.dll
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\DocumentFormat.OpenXml.xml
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\bin\Debug\Newtonsoft.Json.xml
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\MainWindow.g.cs
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\App.g.cs
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX_MarkupCompile.cache
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX_MarkupCompile.lref
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\MainWindow.baml
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.g.resources
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.Properties.Resources.resources
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.csproj.GenerateResource.cache
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.csproj.CoreCompileInputs.cache
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.csproj.CopyComplete
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.exe
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.pdb
