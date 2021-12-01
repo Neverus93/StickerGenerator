@@ -78,8 +78,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\StickerModel.cs" />
-    <Compile Include="Stickers.cs" />
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Model\Stickers.cs" />
     <Compile Include="ViewModel\StickerViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -124,5 +124,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

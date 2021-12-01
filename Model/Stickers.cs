@@ -2,7 +2,7 @@
 using System.IO;
 using Xceed.Words.NET;
 
-namespace StickerGenerator_DocX
+namespace StickerGenerator_DocX.Model
 {
     public class Stickers
     {
@@ -28,7 +28,6 @@ namespace StickerGenerator_DocX
             {
                 using (DocX appendDocument = DocX.Load(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx"))
                 {
-
                     document.ApplyTemplate(DocumentSampleResourcesDirectory + "\\StickerTemplate.dotx");
                     for (int i = 0; i < countBoxes; i++)
                     {
@@ -39,8 +38,9 @@ namespace StickerGenerator_DocX
                         document.ReplaceText("[data]", DateTime.Now.ToString("dd/MM/yyyy"));
 
                         if (i < countBoxes - 1)
+                        {
                             document.InsertDocument(appendDocument);
-
+                        }
                         number++;
                     }
                     if (!Directory.Exists(DocumentSampleOutputDirectory))
