@@ -23,3 +23,4 @@ C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.csproj.CopyComplete
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.exe
 C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.pdb
+C:\Users\romanov.s\OneDrive - ISBC Innovations PTE Ltd\Desktop\StickerGenerator_DocX\obj\Debug\StickerGenerator_DocX.csproj.AssemblyReference.cache

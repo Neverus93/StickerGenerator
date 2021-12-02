@@ -38,7 +38,7 @@ namespace StickerGenerator_DocX.Model
                         outputDocument.ReplaceText("{article}", article);
                         outputDocument.ReplaceText("{articleCRM}", articleCRM);
                         outputDocument.ReplaceText("{chip}", chip);
-                        outputDocument.ReplaceText("{data}", DateTime.Now.ToString("dd/MM/yyyy"));
+                        outputDocument.ReplaceText("{date}", DateTime.Now.ToString("dd/MM/yyyy"));
 
                         if (i < countBoxes - 1)
                         {
