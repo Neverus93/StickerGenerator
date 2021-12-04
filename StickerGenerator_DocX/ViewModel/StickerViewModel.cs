@@ -10,7 +10,6 @@ namespace StickerGenerator_DocX.ViewModel
         public int CurrentNumber { get; set; }
         public RelayCommand RelayCommand { get; }
         public StickerInfo Sticker { get; set; }
-        public string FileName { get; set; }
         public int CountOfBoxes { get; set; }
 
         public StickerViewModel()
@@ -25,8 +24,8 @@ namespace StickerGenerator_DocX.ViewModel
             {
                 if (CountOfBoxes > 0 && CurrentNumber > 0)
                 {
-                    StickersCreator.CreateStickers(FileName, Sticker, CountOfBoxes, CurrentNumber);
-                    MessageBox.Show($"Готово\nДокумент \"{FileName}\" успешно сохранён!");
+                    StickersCreator.CreateStickers(Sticker, CountOfBoxes, CurrentNumber);
+                    MessageBox.Show($"Готово\nДокумент \"{Sticker.ChipName}\" успешно сохранён!");
                 }
                 else
                 {
