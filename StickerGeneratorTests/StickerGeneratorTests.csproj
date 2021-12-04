@@ -14,12 +14,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StickerGenerator_DocX\StickerGenerator_DocX.csproj" />
+<<<<<<< HEAD
   </ItemGroup>
 
   <ItemGroup>
     <None Update="Templates\StickerTemplate.docx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+=======
+>>>>>>> 72ae05eba5ee5d74e9752107fc2cfb17992b5cca
   </ItemGroup>
 
 </Project>
