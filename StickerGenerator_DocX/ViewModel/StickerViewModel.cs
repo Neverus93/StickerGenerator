@@ -6,7 +6,7 @@ using StickerGenerator_DocX.Model;
 
 namespace StickerGenerator_DocX.ViewModel
 {
-    public class StickerViewModel : INotifyPropertyChanged
+    public class StickerViewModel
     {
         public int CurrentNumber { get; set; }
         public RelayCommand RelayCommand { get; }
