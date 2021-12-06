@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel;
+//using System.ComponentModel;
 using System.Windows;
 using StickerGenerator_DocX.Command;
 using StickerGenerator_DocX.Model;
