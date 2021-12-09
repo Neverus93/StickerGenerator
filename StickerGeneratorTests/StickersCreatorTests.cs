@@ -15,22 +15,17 @@ namespace StickerGeneratorTests
             string chipName = "OreonChokopai";
             int countBoxes = 3;
             int currentNumber = 45;
-            string outputFilePath = null;
 
             StickerInfo sticker = new StickerInfo(article, articleCrm, chipName);
 
             try
             {
-                StickersCreator.CreateStickers(sticker, countBoxes, currentNumber, out outputFilePath);
-
-                Assert.AreEqual("Documents\\OreonChokopai.docx", outputFilePath);
+                StickersCreator.CreateStickers(sticker, countBoxes, currentNumber);
+                Assert.Pass();
             }
             finally
             {
-                if (File.Exists(outputFilePath))
-                {
-                    File.Delete(outputFilePath);
-                }
+
             }
         }
     }

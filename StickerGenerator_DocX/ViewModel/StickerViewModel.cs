@@ -1,5 +1,4 @@
 ﻿using System;
-//using System.ComponentModel;
 using System.Windows;
 using StickerGenerator_DocX.Command;
 using StickerGenerator_DocX.Model;
@@ -16,6 +15,7 @@ namespace StickerGenerator_DocX.ViewModel
         public StickerViewModel()
         {
             RelayCommand = new RelayCommand(Click);
+            Sticker = new StickerInfo();
         }
 
         private void Click(object parameter)

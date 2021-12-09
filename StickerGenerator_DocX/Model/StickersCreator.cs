@@ -20,38 +20,7 @@ namespace StickerGenerator_DocX.Model
 
             using (DocX document = DocX.Load(stickerPath))
             {
-                using (DocX outputDocument = DocX.Create(outputFileNamePath))
-                {
-                    for (int i = 0; i < countBoxes; i++)
-                    {
-                        outputDocument.ReplaceText("{firstNumber}", Convert.ToString(currentNumber++) + "\n");
-                        outputDocument.ReplaceText("{article}", sticker.Article);
-                        outputDocument.ReplaceText("{articleCRM}", sticker.ArticleCRM);
-                        outputDocument.ReplaceText("{chip}", sticker.ChipName);
-                        outputDocument.ReplaceText("{date}", DateTime.Now.ToString("dd/MM/yyyy"));
-
-                        if (i < countBoxes - 1)
-                        {
-                            outputDocument.InsertDocument(document);
-                        }
-                    }
-                    if (!Directory.Exists(DocumentSampleOutputDirectory))
-                    {
-                        Directory.CreateDirectory(DocumentSampleOutputDirectory);
-                    }
-                    document.SaveAs(outputFileNamePath);
-                }
-            }
-        }
-
-        public static void CreateStickers(StickerInfo sticker, int countBoxes, int currentNumber, out string outputFileNamePath)
-        {
-            string stickerPath = Path.Combine(DocumentSampleResourcesDirectory, StickerTemplate);
-            outputFileNamePath = Path.Combine(DocumentSampleOutputDirectory, sticker.ChipName);
-
-            using (DocX document = DocX.Load(stickerPath))
-            {
-                using (DocX outputDocument = DocX.Create(outputFileNamePath))
+                using (DocX outputDocument = DocX.Load(stickerPath))
                 {
                     for (int i = 0; i < countBoxes; i++)
                     {
