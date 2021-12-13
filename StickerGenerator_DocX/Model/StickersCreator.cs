@@ -4,7 +4,7 @@ using Xceed.Words.NET;
 
 namespace StickerGenerator_DocX.Model
 {
-    public static class StickersCreator
+    public class StickersCreator
     {
         #region Private Members
         private const string DocumentSampleResourcesDirectory = "Templates";
@@ -13,7 +13,7 @@ namespace StickerGenerator_DocX.Model
         #endregion
 
         #region Public Methods
-        public static void CreateStickers(StickerInfo sticker, int countBoxes, int currentNumber)
+        public void CreateStickers(StickerInfo sticker, int countBoxes, int currentNumber)
         {
             string stickerPath = Path.Combine(DocumentSampleResourcesDirectory, StickerTemplate);
             string outputFileNamePath = Path.Combine(DocumentSampleOutputDirectory, sticker.ChipName);
@@ -24,15 +24,15 @@ namespace StickerGenerator_DocX.Model
                 {
                     for (int i = 0; i < countBoxes; i++)
                     {
-                        outputDocument.ReplaceText("{firstNumber}", Convert.ToString(currentNumber++) + "\n");
-                        outputDocument.ReplaceText("{article}", sticker.Article);
-                        outputDocument.ReplaceText("{articleCRM}", sticker.ArticleCRM);
-                        outputDocument.ReplaceText("{chip}", sticker.ChipName);
-                        outputDocument.ReplaceText("{date}", DateTime.Now.ToString("dd/MM/yyyy"));
+                        document.ReplaceText("{firstNumber}", Convert.ToString(currentNumber++));
+                        document.ReplaceText("{article}", sticker.Article);
+                        document.ReplaceText("{articleCRM}", sticker.ArticleCRM);
+                        document.ReplaceText("{chip}", sticker.ChipName);
+                        document.ReplaceText("{date}", DateTime.Now.ToString("dd/MM/yyyy"));
 
                         if (i < countBoxes - 1)
                         {
-                            outputDocument.InsertDocument(document);
+                            document.InsertDocument(outputDocument);
                         }
                     }
                     if (!Directory.Exists(DocumentSampleOutputDirectory))

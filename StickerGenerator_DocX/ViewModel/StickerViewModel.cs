@@ -15,16 +15,17 @@ namespace StickerGenerator_DocX.ViewModel
         public StickerViewModel()
         {
             RelayCommand = new RelayCommand(Click);
-            Sticker = new StickerInfo();
+            Sticker = new StickerInfo();            
         }
 
         private void Click(object parameter)
         {
+            StickersCreator creator = new StickersCreator();
             try
             {
                 if(CountOfBoxes > 0 && CurrentNumber > 0)
                 {
-                    StickersCreator.CreateStickers(Sticker, CountOfBoxes, CurrentNumber);
+                    creator.CreateStickers(Sticker, CountOfBoxes, CurrentNumber);
                     MessageBox.Show($"Готово\nДокумент \"{Sticker.ChipName}\" успешно сохранён!");
                 }
                 else
